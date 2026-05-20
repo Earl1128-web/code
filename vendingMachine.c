@@ -103,7 +103,7 @@ void addMoney(int *balance, int *choice){
         printf("\nYour Balance: %d", *balance);
         printf("\n");  
         printf("\nInvalid input! Numbers only.\n");
-        while (getchar() != '\n'); // clear buffer
+        while (getchar() != '\n');
         start(balance, choice);
         return;
     }else if (deposit <= 0) {
@@ -125,16 +125,20 @@ void addMoney(int *balance, int *choice){
         *balance += deposit;
 
         system("clear");
-
+        printf("\n");
+        printf("Welcome to Kuya JIRM's Vending Machine\n");
         printf("\nSuccessfully added %d to your balance\n", deposit);
+        printf("\n");
         printf("New Balance: %d\n", *balance);
 
         start(balance, choice);
     }
     else {
         system("clear");
-
+        printf("\n");
+        printf("Welcome to Kuya JIRM's Vending Machine\n");
         printf("\nNothing is added.\n");
+        printf("\n");
         printf("Your Balance: %d\n", *balance);
 
         start(balance, choice);
@@ -162,8 +166,18 @@ void products(int *balance, int *choice){
         printf(" Enter %d => %s\n",i+1,arrProducts[i]);
    }
 
-   printf("\nPlease choose what food do you prefer: ");
-   scanf("%d", &innerChoice);
+    printf("\nPlease choose what food do you prefer: ");
+    while (scanf("%d", &innerChoice) != 1) {
+    system("clear");
+    printf("\n");
+    printf("Welcome to Kuya JIRM's Vending Machine\n");
+    printf("\nYour Balance: %d\n", *balance);
+    printf("\nInvalid input! Please enter a whole number only: ");
+    while (getchar() != '\n');
+    printf("\n");
+    start(balance,choice);
+}
+
 
    switch(innerChoice){
 
@@ -212,6 +226,10 @@ void products(int *balance, int *choice){
             break;
 
         default:
+            system("clear");
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
+            printf("\nYour Balance: %d\n", *balance);
             printf("\nInvalid\n");
             start(balance,choice);
             break;
@@ -247,16 +265,15 @@ void drinks(int *balance, int *choice){
        innerChoice == 'C' || innerChoice == 'c' ||
        innerChoice == 'D' || innerChoice == 'd' ||
        innerChoice == 'E' || innerChoice == 'e'){
-
+        
         printf("\nThis will deduct to your account, Continue? Y/N: ");
         scanf(" %c",&proceed);
 
     }else{
-
         system("clear");
-
+        printf("\nWelcome to Kuya JIRM's Vending Machine\n");
+        printf("\nYour Balance: %d",*balance);
         printf("\nInvalid\n");
-
         start(balance,choice);
     }
 
@@ -280,7 +297,6 @@ void drinks(int *balance, int *choice){
             system("clear");
             printf("\n");
             printf("Welcome to Kuya JIRM's Vending Machine\n");
-            printf("\n");
             printf("\nSuccessfully bought Coke\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -303,7 +319,6 @@ void drinks(int *balance, int *choice){
             system("clear");
             printf("\n");
             printf("Welcome to Kuya JIRM's Vending Machine\n");
-            printf("\n");
             printf("\nSuccessfully bought Sprite\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -326,7 +341,6 @@ void drinks(int *balance, int *choice){
             system("clear");
             printf("\n");
             printf("Welcome to Kuya JIRM's Vending Machine\n");
-            printf("\n");
             printf("\nSuccessfully bought Royal\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -349,8 +363,6 @@ void drinks(int *balance, int *choice){
             system("clear");
             printf("\n");
             printf("Welcome to Kuya JIRM's Vending Machine\n");
-            printf("\n");
-
             printf("\nSuccessfully bought Coffee\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -373,7 +385,6 @@ void drinks(int *balance, int *choice){
             system("clear");
             printf("\n");
             printf("Welcome to Kuya JIRM's Vending Machine\n");
-            printf("\n");
             printf("\nSuccessfully bought Water\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -452,7 +463,8 @@ void chips(int *balance, int *choice){
             updateStock("MangJuan");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Mang Juan\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -473,7 +485,8 @@ void chips(int *balance, int *choice){
             updateStock("Patata");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Patata\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -515,7 +528,8 @@ void chips(int *balance, int *choice){
             updateStock("Piatos");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Piatos\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -536,7 +550,8 @@ void chips(int *balance, int *choice){
             updateStock("Oishi");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Oishi\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -615,7 +630,8 @@ void biscuits(int *balance, int *choice){
             updateStock("Oreo");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Oreo\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -657,7 +673,8 @@ void biscuits(int *balance, int *choice){
             updateStock("Skyflakes");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Skyflakes\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -678,7 +695,8 @@ void biscuits(int *balance, int *choice){
             updateStock("Fita");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Fita\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -699,7 +717,8 @@ void biscuits(int *balance, int *choice){
             updateStock("FudgeeBar");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought FudgeeBar\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -778,7 +797,8 @@ void instantNoodles(int *balance, int *choice){
             updateStock("ChickenFlavor");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought ChickenFlavor\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -799,7 +819,8 @@ void instantNoodles(int *balance, int *choice){
             updateStock("BeefFlavor");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought BeefFlavor\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -820,7 +841,8 @@ void instantNoodles(int *balance, int *choice){
             updateStock("PorkFlavor");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought PorkFlavor\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -841,7 +863,8 @@ void instantNoodles(int *balance, int *choice){
             updateStock("HotSpicy");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought Hot&Spicy\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -862,7 +885,8 @@ void instantNoodles(int *balance, int *choice){
             updateStock("SeafoodFlavor");
 
             system("clear");
-
+            printf("\n");
+            printf("Welcome to Kuya JIRM's Vending Machine\n");
             printf("\nSuccessfully bought SeafoodFlavor\n");
             printf("\nYour New Balance is: %d\n", *balance);
 
@@ -870,6 +894,7 @@ void instantNoodles(int *balance, int *choice){
             break;
 
         default:
+
             printf("\nInvalid Choice\n");
             start(balance,choice);
         }
